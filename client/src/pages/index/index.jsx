@@ -31,19 +31,16 @@ export default class Index extends Component {
       })
   }
 
-  componentDidMount() { }
-
-  componentWillUnmount() { }
-
-  componentDidShow() { }
-
-  componentDidHide() { }
+  handleDetail = (v) => {
+    Taro.setStorageSync('detail', v)
+    Taro.navigateTo({ url: '/pages/goods-detail/index' })
+  }
 
   renderGoodsList() {
     const { goods } = this.state
     return goods.map(v => {
 
-      return <View key={v.id} className='goods-item'>
+      return <View key={v.id} className='goods-item' onClick={() => this.handleDetail(v)}>
         <View className='goods-image'><Image src={v.images[0]} /></View>
         <View className='left-info'>
           <View className='goods-title'><Text>{v.title}</Text></View>

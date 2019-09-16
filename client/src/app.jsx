@@ -17,6 +17,8 @@ class App extends Component {
     pages: [
       'pages/index/index',
       'pages/publish/index',
+      'pages/user/index',
+      'pages/goods-detail/index',
     ],
     window: {
       backgroundTextStyle: 'light',
@@ -30,14 +32,20 @@ class App extends Component {
         {
           pagePath: 'pages/index/index',
           text: '首页',
-          // iconPath: './images/movie.png',
-          // selectedIconPath: './images/movie-active.png'
+          iconPath: './images/home.png',
+          selectedIconPath: './images/home-active.png'
         },
         {
           pagePath: 'pages/publish/index',
           text: '发布',
-          // iconPath: './images/user.png',
-          // selectedIconPath: './images/user-active.png'
+          iconPath: './images/publish.png',
+          selectedIconPath: './images/publish-active.png'
+        },
+        {
+          pagePath: 'pages/user/index',
+          text: '我的',
+          iconPath: './images/user.png',
+          selectedIconPath: './images/user-active.png'
         }
       ],
       color: '#a0a0a0',
@@ -51,6 +59,9 @@ class App extends Component {
   componentDidMount() {
     if (process.env.TARO_ENV === 'weapp') {
       Taro.cloud.init()
+      Taro.cloud.callFunction({ name: 'login' }).then(res => {
+        console.log(res)
+      })
     }
   }
 

@@ -139,7 +139,7 @@ export default class Index extends Component {
               value={desc}
               onChange={this.handleDescChange.bind(this)}
               maxLength={500}
-              placeholder='请输入商品描述'
+              placeholder='请输入商品描述，新旧程度等信息'
             />
           </View>
           <View className='form-item'>

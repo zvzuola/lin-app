@@ -1,0 +1,29 @@
+.container {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.cnt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 120px;
+  padding-top: 20px;
+  height: 410px;
+  box-sizing: border-box;
+}
+.avatar {
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+}
+.name {
+  font-size: 36px;
+  font-weight: 600;
+  color: #282828;
+  height: 50px;
+  line-height: 50px;
+}
